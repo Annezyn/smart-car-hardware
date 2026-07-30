@@ -1,5 +1,7 @@
-# Manufacturing releases
+# 制板文件说明
 
-Create one directory per released board revision, for example `v1.0/`.
+根目录的 `主板.zip`、`驱动板.zip`、`无刷电调.zip`、`四路运放.zip` 和 `电磁.zip` 是各模块的 PCB 制板资料。无刷电调还提供 `AI8051U无刷电调.zip` 作为相关制板资料。
 
-Each release should contain the Gerber archive, drill files, BOM, pick-and-place file, assembly drawing, and production notes required to reproduce the board.
+请下载与目标模块同名的压缩包，保持其内容不变后上传至制板平台。压缩包内通常包括 Gerber、钻孔、飞针测试及下单辅助文件。
+
+> 打样前请在制板平台预览板框、层数和钻孔，装配前再核对同名 `.xlsx` BOM 表。
