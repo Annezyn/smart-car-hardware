@@ -1,29 +1,32 @@
-# Smart Car Hardware
+# 智能车硬件开源工程
 
-An open-source hardware project for an intelligent vehicle. This repository is the single source for schematics, PCB layouts, manufacturing packages, and hardware documentation.
+本仓库收录智能车的原理图、PCB、制版文件和物料清单（BOM），用于设计复现、打样和后续迭代。
 
-## Repository layout
+## 已收录的硬件设计
 
-- `hardware/schematic/` - editable schematic source files and exported PDFs
-- `hardware/pcb/` - editable PCB layout source files, drill data, and board renders
-- `manufacturing/` - Gerber, BOM, pick-and-place, and assembly packages by release
-- `docs/` - design notes, bring-up instructions, and revision history
-- `mechanical/` - 3D models, drawings, and enclosure-related files
+| 模块 | EasyEDA 源工程 | 制板文件 | BOM 表 |
+| --- | --- | --- | --- |
+| 主板 | `主板.epro2` | `主板.zip` | `主板.xlsx` |
+| 驱动板 | `驱动板.epro2` | `驱动板.zip` | `驱动板.xlsx` |
+| 无刷电调 | `无刷电调.epro2` | `无刷电调.zip`、`AI8051U无刷电调.zip` | `无刷电调.xlsx` |
+| 四路运放 | `四路运放.epro2` | `四路运放.zip` | `四路运放.xlsx` |
+| 电磁模块 | `电磁.epro2` | `电磁.zip` | `电磁.xlsx` |
 
-## Workflow
+## 文件说明
 
-1. Put editable design source in `hardware/`.
-2. Create a versioned manufacturing package under `manufacturing/<version>/` only after design review.
-3. Record major changes in `docs/CHANGELOG.md` and tag releases for manufacturable revisions.
+- `.epro2`：EasyEDA 工程源文件，可用于查看和继续编辑原理图、PCB。
+- `.zip`：用于 PCB 制板的压缩包。已核验的主板和驱动板包内包含 Gerber、钻孔文件、飞针测试数据及下单说明；其他模块请以压缩包内文件为准。
+- `.xlsx`：对应模块的物料清单（BOM），包含采购和装配所需的元件信息。
 
-## Recommended EDA tools
+详细使用方法见 [文档说明](docs/README.md)。
 
-KiCad is recommended for new designs. Source files from EasyEDA may also be stored, provided their project version and exports are documented.
+## 打样与装配建议
 
-## License
+1. 同一模块的 `.epro2`、`.zip` 和 `.xlsx` 文件应配套使用，避免混用不同版本资料。
+2. 制板时优先提交对应的 `.zip` 压缩包；不要自行更改压缩包内 Gerber 文件名或层文件。
+3. 采购与贴装前，请以对应的 BOM 表为准，并复核封装、位号和数量。
+4. 修改设计后，请同时更新源工程、制板文件和 BOM，并在 `docs/CHANGELOG.md` 记录改动。
 
-Hardware design files are released under CERN-OHL-S-2.0. Keep license notices when sharing derived boards or schematics.
+## 开源许可证
 
-## Status
-
-Project scaffold created. Add the first smart-car controller schematic and PCB under `hardware/`.
+硬件设计文件采用 [CERN-OHL-S-2.0](LICENSE) 许可证发布。分发或修改原理图、PCB 及其衍生设计时，请保留相应许可证声明。
