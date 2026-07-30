@@ -1,7 +1,9 @@
-# Changelog
+# 变更记录
 
-All notable hardware changes are documented here.
+本文件记录智能车硬件资料的重要变更。
 
-## Unreleased
+## 当前版本
 
-- Initial repository scaffold.
+- 收录主板、驱动板、无刷电调、四路运放和电磁模块的 EasyEDA 源工程。
+- 收录对应 PCB 制板压缩包和 BOM 表。
+- 完善仓库中文说明、制板指引和资料对应关系。
